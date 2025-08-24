@@ -1,0 +1,57 @@
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: pg
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks: [appnet]
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: java-app
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/app
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - "8080:8080"
+    networks: [appnet]
+
+  tests:
+    image: maven:3.9.8-eclipse-temurin-21
+    user: "${UID}:${GID}"
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - m2:/root/.m2
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      MAVEN_OPTS: -Dmaven.repo.local=/root/.m2/repository
+      TESTCONTAINERS_HOST_OVERRIDE: host.docker.internal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: mvn -B -DskipTests=false clean test
+    networks: [ appnet ]
+
+volumes:
+  db_data:
+  m2:
+
+networks:
+  appnet:

@@ -1,0 +1,16 @@
+com/thiagosalvess/booking/infrastructure/persistence/mappers/BookingMapperTest.class
+com/thiagosalvess/booking/application/services/BookingServiceTest.class
+com/thiagosalvess/booking/application/services/UserServiceTest.class
+com/thiagosalvess/booking/infrastructure/repositories/PropertyRepositoryJpaTest.class
+com/thiagosalvess/booking/infrastructure/web/controllers/PropertyControllerTest.class
+com/thiagosalvess/booking/infrastructure/web/controllers/UserControllerTest.class
+com/thiagosalvess/booking/domain/entities/BookingTest.class
+com/thiagosalvess/booking/infrastructure/repositories/BookingRepositoryJpaTest.class
+com/thiagosalvess/booking/infrastructure/repositories/UserRepositoryJpaTest.class
+com/thiagosalvess/booking/domain/valueobject/DateRangeTest.class
+com/thiagosalvess/booking/domain/entities/UserTest.class
+com/thiagosalvess/booking/infrastructure/persistence/mappers/UserMapperTest.class
+com/thiagosalvess/booking/application/services/PropertyServiceTest.class
+com/thiagosalvess/booking/infrastructure/persistence/mappers/PropertyMapperTest.class
+com/thiagosalvess/booking/domain/entities/PropertyTest.class
+com/thiagosalvess/booking/infrastructure/web/controllers/BookingControllerTest.class
