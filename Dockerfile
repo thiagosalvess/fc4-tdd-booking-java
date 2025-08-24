@@ -8,7 +8,7 @@ COPY pom.xml .
 RUN mvn -B -q dependency:go-offline
 
 COPY src ./src
-RUN mvn -B -DskipTests package
+RUN mvn -B -DskipTests=true package
 
 ############################
 # Etapa de runtime (JRE)
