@@ -1,4 +1,4 @@
-# fc4-tdd-booking-java
+# Booking Java
 Projeto é um exemplo simplificado de um sistema de reservas de propriedades, inspirado em plataformas como o Airbnb. Feito em Java e Spring Boot 
 ## Sobre o projeto:
 
