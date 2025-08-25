@@ -1,8 +1,8 @@
 # fc4-tdd-booking-java
-Projeto relacionado ao curso de TDD da fullcycle feito em java
+Projeto é um exemplo simplificado de um sistema de reservas de propriedades, inspirado em plataformas como o Airbnb. Feito em Java e Spring Boot 
 ## Sobre o projeto:
 
-Este projeto é um exemplo simplificado de um sistema de reservas de propriedades, inspirado em plataformas como o Airbnb. O objetivo é criar uma aplicação que permita aos usuários:
+O objetivo é criar uma aplicação que permita aos usuários:
 
 - **Reservar propriedades para períodos específicos.**
 - **Cancelar reservas com base em políticas de reembolso.**
